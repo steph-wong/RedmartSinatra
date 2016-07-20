@@ -5,8 +5,12 @@ class RedmartSinatraApp < Sinatra::Base
   end
 
   get '/users' do
-    @users = ['name1, name2, name3']
+    @users = User.all
     erb :'users'
   end
+
+    get '/users/:id' do
+      erb :'each_user'
+    end
 
 end

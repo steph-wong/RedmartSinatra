@@ -1,9 +1,39 @@
-<h2>getting users from db</h2>
+<h2>users from db</h2>
 
-<ul>
+<!-- <ul>
   <% @users.each do |user| %>
   <li>
-    <%= user %>
+    <%= user[:name]%>
   </li>
   <% end %>
-</ul>
+</ul> -->
+
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Date Joined</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user[:id] %>
+      </td>
+      <td>
+        <%= user[:name] %>
+      </td>
+      <td>
+        <%= user[:email] %>
+      </td>
+      <td>
+        <%= user[:date_joined] %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
