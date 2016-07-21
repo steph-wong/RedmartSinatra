@@ -1,4 +1,5 @@
 require './models/user'
+require './models/product'
 require 'Faker'
 
 # (0..10).each do |i|
@@ -17,10 +18,8 @@ require 'Faker'
   User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    address: Faker::Address.street_address
+    address: Faker::Address.street_address,
+    password: Faker::Internet.password,
+    cc_number: Faker::Business.credit_card_number
   )
-end
-
-(0..10).each do |i|
-  Product.create(name: "Product #{i}")
 end

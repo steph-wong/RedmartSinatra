@@ -3,9 +3,9 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
 
       t.string :name, null: false
-      t.references :product, null: false
-      t.references :user, null: false
-      t.string :status, null: false
+      t.references :brand, null: false
+      t.references :categories, null: false
+      t.string :price, null: false
 
       t.timestamps
 
