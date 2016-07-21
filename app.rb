@@ -1,7 +1,11 @@
 class RedmartSinatraApp < Sinatra::Base
 
   get '/' do
-    erb 'hello world'
+    erb 'homepage'
+  end
+
+  get '/about' do
+    erb 'about page'
   end
 
   get '/users' do
