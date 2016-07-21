@@ -17,6 +17,10 @@ require 'Faker'
   User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    shipping_add: Faker::Address.street_address
+    address: Faker::Address.street_address
   )
+end
+
+(0..10).each do |i|
+  Product.create(name: "Product #{i}")
 end
