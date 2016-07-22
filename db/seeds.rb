@@ -1,5 +1,4 @@
 require './models/user'
-require './models/product'
 require 'Faker'
 
 # (0..10).each do |i|

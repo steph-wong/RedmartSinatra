@@ -8,14 +8,26 @@ class RedmartSinatraApp < Sinatra::Base
     erb 'about page'
   end
 
+
+
   get '/users' do
     @users = User.all
-    erb :'users'
+    erb :'user/index'
   end
+
+    get '/users/new' do
+      erb :'user/new'
+    end
 
   get '/users/:id' do
     @user = User.find(params[:id])
-    erb :'each_user'
+    erb :'user/show'
   end
+
+  get '/users/:id/edit' do
+    @user = User.find(params[:id])
+    erb :'user/edit'
+  end
+
 
 end
