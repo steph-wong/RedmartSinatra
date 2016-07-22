@@ -1,7 +1,7 @@
 class RedmartSinatraApp < Sinatra::Base
 
   get '/' do
-   'homepage'
+    erb "<h2>Welcome to redmart</h2>"
   end
 
   # get '/about' do
@@ -27,6 +27,26 @@ class RedmartSinatraApp < Sinatra::Base
     @user = User.find(params[:id])
     erb :'users/edit'
   end
+
+  post '/users' do
+    puts params[:user]
+
+    @new_user = User.new(params[:user])
+
+    if @new_user.save
+      redirect("/users/")
+    else
+      erb :"users/new"
+
+    end
+  end
+
+  put '/users/:id' do
+  end
+
+  delete '/users/:id' do
+  end
+
 
 
 end
