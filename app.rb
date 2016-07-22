@@ -14,19 +14,21 @@ class RedmartSinatraApp < Sinatra::Base
     erb :'users/index'
   end
 
-    get '/users/new' do
-      erb :'users/new'
-    end
 
   get '/users/:id' do
-    @user = User.find(params[:id])
-    erb :'users/show'
+    if params[:id] == 'new'
+      erb :'users/new'
+    else
+      @user = User.find(params[:id])
+      erb :'users/show'
   end
+end
 
   get '/users/:id/edit' do
     @user = User.find(params[:id])
     erb :'users/edit'
   end
+
 
   post '/users' do
     puts params[:user]
@@ -41,12 +43,25 @@ class RedmartSinatraApp < Sinatra::Base
     end
   end
 
+
   put '/users/:id' do
+    @updated_user = User.find(params[:id])
+
+    if @updated_user.update_attributes( params[:user] )
+      redirect("/users")
+    end
   end
+
 
   delete '/users/:id' do
-  end
+    @deleted_user = User.find(params[:id])
 
+    if @deleted_user.destroy
+      redirect("/users")
+    else
+      erb :"users/#{ @deleted_user.id }"
+  end
+end
 
 
 end
