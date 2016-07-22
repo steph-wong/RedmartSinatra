@@ -34,9 +34,9 @@ class RedmartSinatraApp < Sinatra::Base
     @new_user = User.new(params[:user])
 
     if @new_user.save
-      redirect("/users/")
+      redirect("/users")
     else
-      erb :"users/new"
+      erb :'users/new'
 
     end
   end
