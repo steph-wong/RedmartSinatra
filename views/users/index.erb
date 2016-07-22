@@ -24,7 +24,9 @@
             <td>
                 <a href="users/<%= user[:id] %>">View</a> |
 
-                <form action="/users<%= user[:id] %>" method="post">
+                <a href="users/<%= user[:id] %>/edit">Edit</a> |
+
+                <form action="/users/<%= user[:id] %>" method="post">
                   <input type="hidden" name="_method" value="Delete">
                   <input type="submit" value="Delete">
                 </form>

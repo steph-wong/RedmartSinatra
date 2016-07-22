@@ -4,3 +4,8 @@
 <p>Name: <%= @user[:name] %></p>
 <p>Email: <%= @user[:email] %></p>
 <p>Date Joined: <%= @user[:date_joined] %></p>
+
+<form action="/users/<%= @user[:id] %>" method="post">
+  <input type="hidden" name="_method" value="Delete">
+  <input type="submit" value="Delete">
+</form>
