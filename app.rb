@@ -1,32 +1,31 @@
 class RedmartSinatraApp < Sinatra::Base
 
   get '/' do
-    erb 'homepage'
+   'homepage'
   end
 
-  get '/about' do
-    erb 'about page'
-  end
-
+  # get '/about' do
+  #   erb 'about page'
+  # end
 
 
   get '/users' do
     @users = User.all
-    erb :'user/index'
+    erb :'users/index'
   end
 
     get '/users/new' do
-      erb :'user/new'
+      erb :'users/new'
     end
 
   get '/users/:id' do
     @user = User.find(params[:id])
-    erb :'user/show'
+    erb :'users/show'
   end
 
   get '/users/:id/edit' do
     @user = User.find(params[:id])
-    erb :'user/edit'
+    erb :'users/edit'
   end
 
 

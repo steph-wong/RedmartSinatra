@@ -1,3 +1,9 @@
 development:
   adapter: postgresql
   database: redmr_development
+
+production:
+  adapter: postgresql
+  database: derv0fohocuksa
+  username: nqetocxbimfztr
+  password: SXHUxbuE55JQzgMBe1AsPBrgHt
