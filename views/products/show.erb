@@ -1,0 +1,12 @@
+<h2>Product Info</h2>
+
+<p>Product ID: <%= @product[:id] %></p>
+<p>Name: <%= @product[:name] %></p>
+<p>Brand: <%= @product[:brand_id] %></p>
+<p>Category: <%= @product[:categories_id] %></p>
+<p>Price: <%= @product[:price] %></p>
+
+<form action="/products/<%= @product[:id] %>" method="post">
+  <input type="hidden" name="_method" value="Delete">
+  <input type="submit" value="Delete">
+</form>

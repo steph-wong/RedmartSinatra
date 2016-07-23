@@ -1,0 +1,9 @@
+<h2>Category Info</h2>
+
+<p>Category ID: <%= @category[:id] %></p>
+<p>Name: <%= @category[:name] %></p>
+
+<form action="/categories/<%= @category[:id] %>" method="post">
+  <input type="hidden" name="_method" value="Delete">
+  <input type="submit" value="Delete">
+</form>

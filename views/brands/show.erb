@@ -1,0 +1,9 @@
+<h2>Brand Info</h2>
+
+<p>Brand ID: <%= @brand[:id] %></p>
+<p>Name: <%= @brand[:name] %></p>
+
+<form action="/brands/<%= @brand[:id] %>" method="post">
+  <input type="hidden" name="_method" value="Delete">
+  <input type="submit" value="Delete">
+</form>

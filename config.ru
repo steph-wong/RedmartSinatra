@@ -4,6 +4,9 @@ Bundler.require
 
 require './models/user'
 require './models/product'
+require './models/brand'
+require './models/category'
+
 
 require './app'
 

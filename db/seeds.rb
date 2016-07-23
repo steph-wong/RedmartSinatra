@@ -1,5 +1,7 @@
 require './models/user'
 require './models/product'
+require './models/brand'
+require './models/category'
 
 require 'faker'
 
@@ -31,5 +33,17 @@ end
     brand_id: Faker::Number.digit,
     categories_id: Faker::Number.digit,
     price: Faker::Commerce.price
+  )
+end
+
+(0..10).each do |i|
+  Brand.create(
+    name: Faker::Commerce.product_name
+  )
+end
+
+(0..10).each do |i|
+  Category.create(
+    name: Faker::Commerce.department
   )
 end
