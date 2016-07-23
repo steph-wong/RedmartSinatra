@@ -1,4 +1,6 @@
 require './models/user'
+require './models/product'
+
 require 'faker'
 
 # (0..10).each do |i|
@@ -20,5 +22,14 @@ require 'faker'
     address: Faker::Address.street_address,
     password: Faker::Internet.password,
     cc_number: Faker::Business.credit_card_number
+  )
+end
+
+(0..10).each do |i|
+  Product.create(
+    name: Faker::Commerce.product_name,
+    brand_id: Faker::Number.digit,
+    categories_id: Faker::Number.digit,
+    price: Faker::Commerce.price
   )
 end
