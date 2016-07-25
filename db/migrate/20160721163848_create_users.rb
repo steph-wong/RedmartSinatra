@@ -3,11 +3,11 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
 
       t.string :name, null: false
-      t.string :email, null: false
+      t.string :email
       t.string :address
-      t.string :password, null: false, limit: 30
-      t.string :cc_number, null:false
-      t.date :date_joined, null: false
+      t.string :password, limit: 30
+      t.string :cc_number
+      t.date :date_joined
 
       t.timestamps
     end

@@ -2,10 +2,10 @@ class CreatePurchases < ActiveRecord::Migration
   def change
     create_table :purchases do |t|
 
-      t.references :product, null: false
-      t.references :user, null: false
-      t.date :purchase_date, null: false
-      t.string :status, null: false
+      t.references :product
+      t.references :user
+      t.date :purchase_date
+      t.string :status
 
       t.timestamps
     end

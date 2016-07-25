@@ -23,43 +23,43 @@ ActiveRecord::Schema.define(version: 20160721163848) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        null: false
-    t.integer  "products_id", null: false
+    t.integer  "products_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "products_id", null: false
-    t.integer  "user_id",     null: false
+    t.integer  "products_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "products", force: :cascade do |t|
     t.string   "name",          null: false
-    t.integer  "brand_id",      null: false
-    t.integer  "categories_id", null: false
-    t.string   "price",         null: false
+    t.integer  "brand_id"
+    t.integer  "categories_id"
+    t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "purchases", force: :cascade do |t|
-    t.integer  "product_id",    null: false
-    t.integer  "user_id",       null: false
-    t.date     "purchase_date", null: false
-    t.string   "status",        null: false
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.date     "purchase_date"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   null: false
-    t.string   "email",                  null: false
+    t.string   "email"
     t.string   "address"
-    t.string   "password",    limit: 30, null: false
-    t.string   "cc_number",              null: false
-    t.date     "date_joined",            null: false
+    t.string   "password",    limit: 30
+    t.string   "cc_number"
+    t.date     "date_joined"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
