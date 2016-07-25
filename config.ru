@@ -7,7 +7,6 @@ require './models/product'
 require './models/brand'
 require './models/category'
 
-
 require './app'
 
 # allow delete and put requests
