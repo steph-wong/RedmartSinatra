@@ -2,6 +2,7 @@ require './models/user'
 require './models/product'
 require './models/brand'
 require './models/category'
+require './models/review'
 
 require 'faker'
 
@@ -28,15 +29,6 @@ require 'faker'
 end
 
 (0..10).each do |i|
-  Product.create(
-    name: Faker::Commerce.product_name,
-    brand_id: Faker::Number.digit,
-    categories_id: Faker::Number.digit,
-    price: Faker::Commerce.price
-  )
-end
-
-(0..10).each do |i|
   Brand.create(
     name: Faker::Commerce.product_name
   )
@@ -45,5 +37,25 @@ end
 (0..10).each do |i|
   Category.create(
     name: Faker::Commerce.department
+  )
+end
+
+brand_ids = Brand.pluck(:id)
+category_ids = Category.pluck(:id)
+
+(0..10).each do |i|
+  Product.create(
+    name: Faker::Commerce.product_name,
+    brand_id: brand_ids.sample,
+    categories_id: categories_ids.sample,
+    price: Faker::Commerce.price
+  )
+end
+
+(0..10).each do |i|
+  Review.create(
+    content: Faker::Hipster.sentence,
+    user_id: rand(1..11),
+    product_id: rand(1..11)
   )
 end
